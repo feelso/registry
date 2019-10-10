@@ -10,21 +10,28 @@ import UIKit
 
 class FourthVC: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    var user: UserModel!
+    var timerInfo: TimerModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameLabel.text = user.firstName
+        lastNameLabel.text = user.lastName
+        emailLabel.text = user.email
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+        guard let timerInfo = timerInfo else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "FifthVC") as! FifthVC
+        nextVC.resultText = "You needed: \(Int(timerInfo.duration.rawValue - timerInfo.currentTime)) seconds"
+        timerInfo.timer.invalidate()
+      
+        self.present(nextVC, animated: true, completion: nil)
     }
-    */
-
+    
 }

@@ -11,24 +11,20 @@ import UIKit
 
 class TimerModel {
     
-    static var timer = Timer()
-    static var duration: Duration = .light
-    static var currentTime = Duration.light.rawValue
-    
-     var dur: Duration
-     var cur: CGFloat
-     var tim: Timer
+     var duration: Duration
+     var currentTime: CGFloat
+     var timer: Timer
 
     enum Duration: CGFloat {
         case light = 60.0
         case middle = 30.0
-        case hard = 5.0
+        case hard = 10.0
     }
     
-    init(dur: Duration) {
-        self.dur = dur
-        self.cur = dur.rawValue
-        self.tim = Timer()
+    init(duration: Duration) {
+        self.duration = duration
+        self.currentTime = duration.rawValue
+        self.timer = Timer()
     }
 
 }

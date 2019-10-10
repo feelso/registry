@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class UserModel {
+    var firstName: String
+    var lastName: String
+    var email: String
+    
+    init(firstName: String, lastName: String, email: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+    }
+}

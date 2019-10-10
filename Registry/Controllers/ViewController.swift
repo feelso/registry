@@ -5,40 +5,35 @@
 //  Created by Arsen on 10/8/19.
 //  Copyright © 2019 Arsen. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
 
-    var timerDuration: TimerData.Duration = .light
-    var currentTime: Int = 0
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    var duration: TimerModel.Duration?
 
+        override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
     
     @IBAction func levelButtonClicked(_ sender: UIButton) {
         if sender.tag == 0 {
-            TimerData.duration = .light
-            TimerData.currentTime = TimerData.Duration.light.rawValue
+            duration = .light
         } else if sender.tag == 1 {
-            TimerData.duration = .middle
-            TimerData.currentTime = TimerData.Duration.middle.rawValue
+            duration = .middle
         } else {
-            TimerData.duration = .hard
-            TimerData.currentTime = TimerData.Duration.hard.rawValue
+            duration = .hard
         }
         
-        performSegue(withIdentifier: "view2", sender: nil)
-
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "view2" {
-
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navC = storyboard.instantiateViewController(withIdentifier: "navController") as! CustomNavigationController
+     
+        if let dur = duration {
+            let timerInfo = TimerModel(duration: dur)
+            navC.timerInfo = timerInfo
+            self.show(navC, sender: nil)
         }
     }
-
+    
 }
 
