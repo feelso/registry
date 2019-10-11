@@ -26,7 +26,7 @@ class CustomNavigationController: UINavigationController {
         
     }
     
-    private func runTimer() {
+     func runTimer() {
         guard let timerInfo = timerInfo else { return }
         
         timerInfo.timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
@@ -34,7 +34,8 @@ class CustomNavigationController: UINavigationController {
     
     @objc private func presentFirstVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC") as! ViewController
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC") as! FirstVC
+        FirstVC.removeAllDefaults()
         self.present(secondViewController, animated: true, completion: nil)
     }
     
@@ -94,13 +95,12 @@ class CustomNavigationController: UINavigationController {
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             self.perform(#selector(self.presentFirstVC), with: nil, afterDelay: 0.3)
-            self.notifications.scheduleNotification(notificationType: "Registry Game")
         }
         
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-    
+
     private func navigationBarSetup() {
         self.navigationItem.rightBarButtonItem?.title = "1/3"
         self.title = "Your name"
@@ -118,7 +118,7 @@ class CustomNavigationController: UINavigationController {
     
     private func animateBlueCircleTo(value: CGFloat) {
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        basicAnimation.duration = CFTimeInterval(1)
+      //  basicAnimation.duration = CFTimeInterval(1)
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.strokeEnd = value

@@ -27,18 +27,18 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     
-    func scheduleNotification(notificationType: String) {
+    func scheduleNotification(interval: TimeInterval) {
         
         let content = UNMutableNotificationContent() // Содержимое уведомления
         let userActions = "User Actions"
         
-        content.title = notificationType
+        content.title = "Registry Game"
         content.body = "You've ran out of time!"
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = userActions
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
         let identifier = "Registry Game"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         

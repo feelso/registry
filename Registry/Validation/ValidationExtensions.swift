@@ -63,6 +63,7 @@ extension SecondVC: UITextFieldDelegate {
             case .success:
                 firstNameTF.textColor = .black
                 firstCheck = true
+                name = firstNameTF.text ?? ""
                 break
                 
             case .failure(_):
@@ -76,6 +77,7 @@ extension SecondVC: UITextFieldDelegate {
             switch response {
             case .success:
                 lastNameTF.textColor = .black
+                lastName = lastNameTF.text ?? ""
                 secondCheck = true
                 break
             case .failure(_):
