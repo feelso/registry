@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FifthVC: UIViewController {
+class SuccessVC: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -21,7 +21,6 @@ class FifthVC: UIViewController {
         fillInfo()
         resultLabel.text = resultText
         UserDefaults.standard.set(checker, forKey: "checkView5")
-
     }
     
     @IBAction func tryAgainButtonPressed(_ sender: UIButton) {

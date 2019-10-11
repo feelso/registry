@@ -84,7 +84,7 @@
         <!--Your name-->
         <scene sceneID="Bad-Bv-pK1">
             <objects>
-                <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o1s-pI-g51" customClass="SecondVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o1s-pI-g51" customClass="UserNameVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="058-d2-csD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
         <!--Email-->
         <scene sceneID="aKQ-el-QhE">
             <objects>
-                <viewController storyboardIdentifier="ThirdVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m5o-uY-J3r" customClass="ThirdVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m5o-uY-J3r" customClass="UserEmailVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K58-5u-OkJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -190,7 +190,7 @@
         <!--Confirmation-->
         <scene sceneID="nZ0-ae-gip">
             <objects>
-                <viewController storyboardIdentifier="FourthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cpy-Sy-CNH" customClass="FourthVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FourthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cpy-Sy-CNH" customClass="ConfirmationVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HRV-XW-VGg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="903" y="719"/>
         </scene>
-        <!--FifthVC-->
+        <!--SuccessVC-->
         <scene sceneID="m1y-VG-qcg">
             <objects>
-                <viewController storyboardIdentifier="FifthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FxY-1c-RiA" customClass="FifthVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FifthVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FxY-1c-RiA" customClass="SuccessVC" customModule="Registry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vRH-Fd-lZT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

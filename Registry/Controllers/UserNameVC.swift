@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondVC: UIViewController {
+class UserNameVC: UIViewController {
 
     @IBOutlet weak var firstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
@@ -27,7 +27,7 @@ class SecondVC: UIViewController {
 
         fillInfo()
         
-        self.hideKeyboardWhenTappedAround()
+        self.addGestureOfTapping()
         firstNameTF.addTarget(self, action: #selector(textFieldChanged), for: .allEditingEvents)
         lastNameTF.addTarget(self, action: #selector(textFieldChanged), for: .allEditingEvents)
 
@@ -36,7 +36,7 @@ class SecondVC: UIViewController {
     @IBAction func nextButtonClicked(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdVC
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! UserEmailVC
         let userInfo = [name, lastName]
         nextVC.userName = firstNameTF.text!
         nextVC.userLastName = lastNameTF.text!

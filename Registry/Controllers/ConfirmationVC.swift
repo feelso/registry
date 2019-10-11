@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FourthVC: UIViewController {
+class ConfirmationVC: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
@@ -29,7 +29,7 @@ class FourthVC: UIViewController {
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
         guard let timerInfo = timerInfo else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "FifthVC") as! FifthVC
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "FifthVC") as! SuccessVC
         let text = "You needed: \(Int(timerInfo.duration.rawValue - timerInfo.currentTime)) seconds"
         nextVC.resultText = text
 
@@ -40,7 +40,6 @@ class FourthVC: UIViewController {
 
         self.present(nextVC, animated: true, completion: nil)
     }
-    
     
     func fillInfo() {
      
@@ -59,5 +58,3 @@ class FourthVC: UIViewController {
 
     }
 }
-    
-

@@ -17,6 +17,7 @@ class FirstVC: UIViewController {
     }
     
     @IBAction func levelButtonClicked(_ sender: UIButton) {
+     
         if sender.tag == 0 {
             duration = .light
         } else if sender.tag == 1 {
@@ -36,6 +37,7 @@ class FirstVC: UIViewController {
             self.show(navC, sender: nil)
         }
     }
+  
     static func removeAllDefaults() {
         UserDefaults.standard.removeObject(forKey: "date")
         UserDefaults.standard.removeObject(forKey: "duration")
@@ -50,4 +52,3 @@ class FirstVC: UIViewController {
         UserDefaults.standard.removeObject(forKey: "checkView5")
     }
 }
-

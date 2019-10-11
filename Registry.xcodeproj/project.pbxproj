@@ -12,12 +12,12 @@
 		B8DFB4CF234CDD5D00C0501D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DFB4CD234CDD5D00C0501D /* Main.storyboard */; };
 		B8DFB4D1234CDD5F00C0501D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DFB4D0234CDD5F00C0501D /* Assets.xcassets */; };
 		B8DFB4D4234CDD5F00C0501D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DFB4D2234CDD5F00C0501D /* LaunchScreen.storyboard */; };
-		B8DFB4DC234D057A00C0501D /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4DB234D057A00C0501D /* SecondVC.swift */; };
+		B8DFB4DC234D057A00C0501D /* UserNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4DB234D057A00C0501D /* UserNameVC.swift */; };
 		B8DFB4DE234DEDAF00C0501D /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4DD234DEDAF00C0501D /* CustomNavigationController.swift */; };
 		B8DFB4E0234DEDD000C0501D /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4DF234DEDD000C0501D /* TimerModel.swift */; };
-		B8DFB4E2234DF36C00C0501D /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E1234DF36C00C0501D /* ThirdVC.swift */; };
-		B8DFB4E4234DF37900C0501D /* FourthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E3234DF37900C0501D /* FourthVC.swift */; };
-		B8DFB4E6234DF38500C0501D /* FifthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E5234DF38500C0501D /* FifthVC.swift */; };
+		B8DFB4E2234DF36C00C0501D /* UserEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E1234DF36C00C0501D /* UserEmailVC.swift */; };
+		B8DFB4E4234DF37900C0501D /* ConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E3234DF37900C0501D /* ConfirmationVC.swift */; };
+		B8DFB4E6234DF38500C0501D /* SuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E5234DF38500C0501D /* SuccessVC.swift */; };
 		B8DFB4EA234E1FBC00C0501D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4E9234E1FBC00C0501D /* Validation.swift */; };
 		B8DFB4EC234E1FC700C0501D /* ValidationEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4EB234E1FC700C0501D /* ValidationEnums.swift */; };
 		B8DFB4EF234E278200C0501D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4EE234E278200C0501D /* UserModel.swift */; };
@@ -33,12 +33,12 @@
 		B8DFB4D0234CDD5F00C0501D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8DFB4D3234CDD5F00C0501D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8DFB4D5234CDD5F00C0501D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8DFB4DB234D057A00C0501D /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		B8DFB4DB234D057A00C0501D /* UserNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameVC.swift; sourceTree = "<group>"; };
 		B8DFB4DD234DEDAF00C0501D /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		B8DFB4DF234DEDD000C0501D /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
-		B8DFB4E1234DF36C00C0501D /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
-		B8DFB4E3234DF37900C0501D /* FourthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthVC.swift; sourceTree = "<group>"; };
-		B8DFB4E5234DF38500C0501D /* FifthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthVC.swift; sourceTree = "<group>"; };
+		B8DFB4E1234DF36C00C0501D /* UserEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEmailVC.swift; sourceTree = "<group>"; };
+		B8DFB4E3234DF37900C0501D /* ConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationVC.swift; sourceTree = "<group>"; };
+		B8DFB4E5234DF38500C0501D /* SuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessVC.swift; sourceTree = "<group>"; };
 		B8DFB4E9234E1FBC00C0501D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		B8DFB4EB234E1FC700C0501D /* ValidationEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationEnums.swift; sourceTree = "<group>"; };
 		B8DFB4EE234E278200C0501D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -92,10 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				B8DFB4CB234CDD5D00C0501D /* FirstVC.swift */,
-				B8DFB4DB234D057A00C0501D /* SecondVC.swift */,
-				B8DFB4E1234DF36C00C0501D /* ThirdVC.swift */,
-				B8DFB4E3234DF37900C0501D /* FourthVC.swift */,
-				B8DFB4E5234DF38500C0501D /* FifthVC.swift */,
+				B8DFB4DB234D057A00C0501D /* UserNameVC.swift */,
+				B8DFB4E1234DF36C00C0501D /* UserEmailVC.swift */,
+				B8DFB4E3234DF37900C0501D /* ConfirmationVC.swift */,
+				B8DFB4E5234DF38500C0501D /* SuccessVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,14 +193,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8DFB4F1234E3EFE00C0501D /* Notifications.swift in Sources */,
-				B8DFB4E2234DF36C00C0501D /* ThirdVC.swift in Sources */,
+				B8DFB4E2234DF36C00C0501D /* UserEmailVC.swift in Sources */,
 				B8DFB4DE234DEDAF00C0501D /* CustomNavigationController.swift in Sources */,
-				B8DFB4E6234DF38500C0501D /* FifthVC.swift in Sources */,
+				B8DFB4E6234DF38500C0501D /* SuccessVC.swift in Sources */,
 				B8DFB4CC234CDD5D00C0501D /* FirstVC.swift in Sources */,
 				B8DFB4EA234E1FBC00C0501D /* Validation.swift in Sources */,
-				B8DFB4DC234D057A00C0501D /* SecondVC.swift in Sources */,
+				B8DFB4DC234D057A00C0501D /* UserNameVC.swift in Sources */,
 				B8DFB4E0234DEDD000C0501D /* TimerModel.swift in Sources */,
-				B8DFB4E4234DF37900C0501D /* FourthVC.swift in Sources */,
+				B8DFB4E4234DF37900C0501D /* ConfirmationVC.swift in Sources */,
 				B8DFB4CA234CDD5D00C0501D /* AppDelegate.swift in Sources */,
 				B8DFB4F3234F3C6000C0501D /* ValidationExtensions.swift in Sources */,
 				B8DFB4EC234E1FC700C0501D /* ValidationEnums.swift in Sources */,

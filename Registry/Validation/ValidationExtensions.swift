@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-extension ThirdVC: UITextFieldDelegate {
+extension UserEmailVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -41,7 +41,7 @@ extension ThirdVC: UITextFieldDelegate {
 }
 
 
-extension SecondVC: UITextFieldDelegate {
+extension UserNameVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
