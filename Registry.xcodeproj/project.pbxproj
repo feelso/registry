@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B8DFB4CA234CDD5D00C0501D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4C9234CDD5D00C0501D /* AppDelegate.swift */; };
-		B8DFB4CC234CDD5D00C0501D /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4CB234CDD5D00C0501D /* FirstVC.swift */; };
+		B8DFB4CC234CDD5D00C0501D /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4CB234CDD5D00C0501D /* StartVC.swift */; };
 		B8DFB4CF234CDD5D00C0501D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DFB4CD234CDD5D00C0501D /* Main.storyboard */; };
 		B8DFB4D1234CDD5F00C0501D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DFB4D0234CDD5F00C0501D /* Assets.xcassets */; };
 		B8DFB4D4234CDD5F00C0501D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DFB4D2234CDD5F00C0501D /* LaunchScreen.storyboard */; };
@@ -23,12 +23,13 @@
 		B8DFB4EF234E278200C0501D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4EE234E278200C0501D /* UserModel.swift */; };
 		B8DFB4F1234E3EFE00C0501D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4F0234E3EFE00C0501D /* Notifications.swift */; };
 		B8DFB4F3234F3C6000C0501D /* ValidationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DFB4F2234F3C5F00C0501D /* ValidationExtensions.swift */; };
+		B8F35BE123511DA200CB750B /* ControllersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F35BE023511DA200CB750B /* ControllersModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B8DFB4C6234CDD5D00C0501D /* Registry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Registry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DFB4C9234CDD5D00C0501D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8DFB4CB234CDD5D00C0501D /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		B8DFB4CB234CDD5D00C0501D /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		B8DFB4CE234CDD5D00C0501D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8DFB4D0234CDD5F00C0501D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8DFB4D3234CDD5F00C0501D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		B8DFB4EE234E278200C0501D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B8DFB4F0234E3EFE00C0501D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		B8DFB4F2234F3C5F00C0501D /* ValidationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationExtensions.swift; sourceTree = "<group>"; };
+		B8F35BE023511DA200CB750B /* ControllersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,7 @@
 		B8DFB4E7234DF39A00C0501D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B8DFB4CB234CDD5D00C0501D /* FirstVC.swift */,
+				B8DFB4CB234CDD5D00C0501D /* StartVC.swift */,
 				B8DFB4DB234D057A00C0501D /* UserNameVC.swift */,
 				B8DFB4E1234DF36C00C0501D /* UserEmailVC.swift */,
 				B8DFB4E3234DF37900C0501D /* ConfirmationVC.swift */,
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				B8DFB4DD234DEDAF00C0501D /* CustomNavigationController.swift */,
+				B8F35BE023511DA200CB750B /* ControllersModel.swift */,
 				B8DFB4F0234E3EFE00C0501D /* Notifications.swift */,
 				B8DFB4EE234E278200C0501D /* UserModel.swift */,
 				B8DFB4DF234DEDD000C0501D /* TimerModel.swift */,
@@ -193,10 +196,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8DFB4F1234E3EFE00C0501D /* Notifications.swift in Sources */,
+				B8F35BE123511DA200CB750B /* ControllersModel.swift in Sources */,
 				B8DFB4E2234DF36C00C0501D /* UserEmailVC.swift in Sources */,
 				B8DFB4DE234DEDAF00C0501D /* CustomNavigationController.swift in Sources */,
 				B8DFB4E6234DF38500C0501D /* SuccessVC.swift in Sources */,
-				B8DFB4CC234CDD5D00C0501D /* FirstVC.swift in Sources */,
+				B8DFB4CC234CDD5D00C0501D /* StartVC.swift in Sources */,
 				B8DFB4EA234E1FBC00C0501D /* Validation.swift in Sources */,
 				B8DFB4DC234D057A00C0501D /* UserNameVC.swift in Sources */,
 				B8DFB4E0234DEDD000C0501D /* TimerModel.swift in Sources */,

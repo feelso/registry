@@ -64,20 +64,5 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate {
         completionHandler([.alert,.sound])
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        switch response.actionIdentifier {
-        case UNNotificationDismissActionIdentifier:
-            print("Dismiss Action")
-        case UNNotificationDefaultActionIdentifier:
-            print("Default")
-        case "Delete":
-            print("Delete")
-        default:
-            print("Unknown action")
-        }
-        completionHandler()
-    }
+
 }

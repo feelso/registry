@@ -14,16 +14,44 @@ class CustomNavigationController: UINavigationController {
     var shapeLayer: CAShapeLayer!
     var percentageLabel: UILabel!
     let notifications = Notifications()
-
+    
     var timerInfo: TimerModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setControllers()
         setupCircleLayers()
         setupPercentageLabel()
         runTimer()
         
+    }
+    
+    func setControllers() {
+        if let stackOfControllers = UserDefaults.standard.stringArray(forKey: String(describing: CustomNavigationController.self)) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var controllers = [UIViewController]()
+
+            for nameOfController in stackOfControllers {
+                let viewController = storyboard.instantiateViewController(withIdentifier: nameOfController)
+                controllers.append(viewController)
+                }
+
+            self.setViewControllers(controllers, animated: true)
+        }
+    }
+    
+   static func saveStackOfControllers(from viewController: UIViewController) {
+        if let controllers = viewController.navigationController?.viewControllers {
+            var data = [String]()
+
+            for controller in controllers {
+                if let nameOfController = controller.restorationIdentifier {
+                    data.append(nameOfController)
+                }
+            }
+            UserDefaults.standard.set(data, forKey: String(describing: CustomNavigationController.self))
+        }
     }
     
      func runTimer() {
@@ -34,11 +62,12 @@ class CustomNavigationController: UINavigationController {
     
     @objc private func presentFirstVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC") as! FirstVC
-        FirstVC.removeAllDefaults()
-        self.present(secondViewController, animated: true, completion: nil)
+        let startVC = storyboard.instantiateViewController(withIdentifier: "StartVC") as! StartVC
+        CustomNavigationController.resetAllDefaults()
+        self.present(startVC, animated: true, completion: nil)
     }
-    
+
+
     @objc private func updateTimer() {
         guard let timerInfo = timerInfo else { return }
         
@@ -95,6 +124,7 @@ class CustomNavigationController: UINavigationController {
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             self.perform(#selector(self.presentFirstVC), with: nil, afterDelay: 0.3)
+            CustomNavigationController.resetAllDefaults()
         }
         
         alert.addAction(okAction)
@@ -125,4 +155,22 @@ class CustomNavigationController: UINavigationController {
         shapeLayer.add(basicAnimation, forKey: "urSoBasic")
     }
     
+     static func resetAllDefaults() {
+        UserModel.user.firstName = nil
+        UserModel.user.lastName = nil
+        UserModel.user.email = nil
+                        
+        UserDefaults.standard.removeObject(forKey: "date")
+        UserDefaults.standard.removeObject(forKey: TimerModel.TimerInfo.duration.rawValue)
+        UserDefaults.standard.removeObject(forKey: TimerModel.TimerInfo.currentTime.rawValue)
+        UserDefaults.standard.removeObject(forKey: String(describing: CustomNavigationController.self))
+        UserDefaults.standard.removeObject(forKey: String(describing: SuccessVC.self))
+    }
+
+    
+    
+    
+ 
+    
 }
+

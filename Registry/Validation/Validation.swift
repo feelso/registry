@@ -16,6 +16,7 @@ class Validation: NSObject {
     func validate(values: (type: ValidationType, inputValue: String)...) -> Valid {
         for valueToBeChecked in values {
             switch valueToBeChecked.type {
+                
             case .email:
                 if let tempValue = isValidString((valueToBeChecked.inputValue, .email, .inValidEmail)) {
                     return tempValue
@@ -56,10 +57,8 @@ class Validation: NSObject {
     }
 }
 
-
-
 extension UIViewController {
-    func addGestureOfTapping() {
+    func handleTap() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)

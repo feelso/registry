@@ -21,6 +21,11 @@ class TimerModel {
         case hard = 10.0
     }
     
+    enum TimerInfo: String {
+        case duration
+        case currentTime
+        case timer
+    }
     init(duration: Duration) {
         self.duration = duration
         self.currentTime = duration.rawValue

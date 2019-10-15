@@ -10,8 +10,6 @@ import UIKit
 
 class UserEmailVC: UIViewController {
 
-    var userName = ""
-    var userLastName = ""
     var email = ""
     
     var checker = false
@@ -22,40 +20,33 @@ class UserEmailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(checker, forKey: "checkView3")
-        emailTF.addTarget(self, action: #selector(textFieldChanged), for: .allEditingEvents)
 
-        fillInfo()
+        CustomNavigationController.saveStackOfControllers(from: self)
+        setupInfo()
         
-        self.addGestureOfTapping()
+        emailTF.addTarget(self, action: #selector(textFieldChanged), for: .allEditingEvents)
+        self.handleTap()
+        
     }
 
-        @IBAction func nextButtonClicked(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "FourthVC") as! ConfirmationVC
-        let nC = self.navigationController as! CustomNavigationController
-        let user = UserModel(firstName: userName, lastName: userLastName, email: email)
-        let userArray = [userName, userLastName, email]
-        nextVC.user = user
-        nextVC.timerInfo = nC.timerInfo
-       
-        UserDefaults.standard.setValue(userArray, forKey: "view3")
-        UserDefaults.standard.removeObject(forKey: "checkView3")
+    @IBAction func nextButtonClicked(_ sender: UIButton) {
+        
+        if let confirmationVC = self.instantiateViewControllerOnMain(withClass: ConfirmationVC.self) {
+            UserModel.user.email = email
             
-        self.show(nextVC, sender: nil)
-    }
-    
-    func fillInfo() {
-        if let data = UserDefaults.standard.stringArray(forKey: "view3") {
-        userName = data[0]
-        userLastName = data[1]
-        email = data[2]
-        emailTF.text = email
-        nextButtonLabel.isHidden = false
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let fourthVC = storyboard.instantiateViewController(withIdentifier: "FourthVC") as! ConfirmationVC
-        fourthVC.user = UserModel(firstName: data[0], lastName: data[1], email: data[2])
+            if let navC = self.navigationController as? CustomNavigationController {
+                confirmationVC.timerInfo = navC.timerInfo
+            }
+            
+            self.navigationController?.pushViewController(confirmationVC, animated: true)
         }
     }
+    
+    private func setupInfo() {
+        
+        if let email = UserModel.user.email {
+            emailTF.text = email
+        }
+    }
+
 }

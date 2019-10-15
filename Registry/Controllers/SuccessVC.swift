@@ -13,25 +13,23 @@ class SuccessVC: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     var resultText = ""
-    var checker = false
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillInfo()
+        setupInfo()
         resultLabel.text = resultText
-        UserDefaults.standard.set(checker, forKey: "checkView5")
     }
     
     @IBAction func tryAgainButtonPressed(_ sender: UIButton) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let secondViewController = storyboard.instantiateViewController(withIdentifier: "FirstVC") as! FirstVC
-            FirstVC.removeAllDefaults()
-            self.present(secondViewController, animated: true, completion: nil)
+        if let startVC = self.instantiateViewControllerOnMain(withClass: StartVC.self) {
+            CustomNavigationController.resetAllDefaults()
+  
+            self.present(startVC, animated: true, completion: nil)
         }
-    
-    func fillInfo() {
-        if let data = UserDefaults.standard.value(forKey: "view5") as? String {
+    }
+  
+    private func setupInfo() {
+        if let data = UserDefaults.standard.value(forKey: String(describing: SuccessVC.self)) as? String {
                 resultText = data
             }
         }

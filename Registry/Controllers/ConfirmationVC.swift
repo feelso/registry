@@ -15,46 +15,40 @@ class ConfirmationVC: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     
-    var user: UserModel?
     var timerInfo: TimerModel?
-    var checker = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillInfo()
-        UserDefaults.standard.set(checker, forKey: "checkView4")
+        setupInfo()
+        
+        CustomNavigationController.saveStackOfControllers(from: self)
+
 
     }
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
         guard let timerInfo = timerInfo else { return }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "FifthVC") as! SuccessVC
-        let text = "You needed: \(Int(timerInfo.duration.rawValue - timerInfo.currentTime)) seconds"
-        nextVC.resultText = text
-
-        UserDefaults.standard.set(text, forKey: "view5")
-        UserDefaults.standard.removeObject(forKey: "checkView4")
-
-        timerInfo.timer.invalidate()
-
-        self.present(nextVC, animated: true, completion: nil)
+      
+        if let successVC = self.instantiateViewControllerOnMain(withClass: SuccessVC.self) {
+            let text = "You needed: \(Int(timerInfo.duration.rawValue - timerInfo.currentTime)) seconds"
+            successVC.resultText = text
+           
+            UserDefaults.standard.set(text, forKey: String(describing: SuccessVC.self))
+            
+            timerInfo.timer.invalidate()
+            
+            self.present(successVC, animated: true, completion: nil)
+        }
     }
     
-    func fillInfo() {
-     
-        if let user = user {
-            nameLabel.text = user.firstName
-            lastNameLabel.text = user.lastName
-            emailLabel.text = user.email
-        } else {
-            if let data = UserDefaults.standard.stringArray(forKey: "view3") {
-                user = UserModel(firstName: data[0], lastName: data[1], email: data[2])
-                nameLabel.text = data[0]
-                lastNameLabel.text = data[1]
-                emailLabel.text = data[2]
-            }
-        }
+    private func setupInfo() {
 
+        if let name = UserModel.user.firstName, let lastName = UserModel.user.lastName, let email = UserModel.user.email {
+            nameLabel.text = name
+            lastNameLabel.text = lastName
+            emailLabel.text = email
+        }
+        
     }
+
 }

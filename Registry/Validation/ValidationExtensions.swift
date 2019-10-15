@@ -42,6 +42,7 @@ extension UserEmailVC: UITextFieldDelegate {
 
 
 extension UserNameVC: UITextFieldDelegate {
+ 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -63,7 +64,6 @@ extension UserNameVC: UITextFieldDelegate {
             case .success:
                 firstNameTF.textColor = .black
                 firstCheck = true
-                name = firstNameTF.text ?? ""
                 break
                 
             case .failure(_):
@@ -77,7 +77,6 @@ extension UserNameVC: UITextFieldDelegate {
             switch response {
             case .success:
                 lastNameTF.textColor = .black
-                lastName = lastNameTF.text ?? ""
                 secondCheck = true
                 break
             case .failure(_):
